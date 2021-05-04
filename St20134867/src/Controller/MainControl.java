@@ -19,16 +19,12 @@ public class MainControl implements ActionListener {
 		// TODO Auto-generated constructor stub
 		this.view = view;
 	}
-	
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println("Button clicked: "  + e.getActionCommand());
 		
 	}
-
-	
 }
 
 

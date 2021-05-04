@@ -15,9 +15,28 @@ public class ImageModel {
 	private BufferedImage grayscaleImg = null;
 	private BufferedImage edgeImg = null;
 	
-	public ImageModel() {
-		
+	private int weight;
+	private int height;
+	private String size;
+	
+	private double nweight;
+	private double nheight;
+	private double distance;
+	
+	public ImageModel(int weight, int height, String size) {
+		this.weight = weight;
+		this.height = height;
+		this.size = size;
 	}
+
+	public ImageModel(BufferedImage bufferedImage){
+		this.bufImg = bufferedImage;
+	}
+
+	public ImageModel(File fp) throws IOException {
+		this.bufImg = ImageIO.read(fp);
+	}
+
 
 	public void setFilePointer(File fp) {
 		this.fp = fp;
@@ -27,8 +46,7 @@ public class ImageModel {
 			bufImg = ImageIO.read(fp);
 	}
 	
-	
-	
+
 	public BufferedImage getRGBImage() {
 		return bufImg;
 		
@@ -194,6 +212,86 @@ public class ImageModel {
 		return this.edgeImg;
 	}
 	
+	public double getNweight() {
+		return nweight;
+	}
 	
+	/**
+	 * @param nweight the nweight to set
+	 */
+	public void setNweight(double nweight) {
+		this.nweight = nweight;
+	}
+
+	/**
+	 * @return the nheight
+	 */
+	public double getNheight() {
+		return nheight;
+	}
+
+	/**
+	 * @param nheight the nheight to set
+	 */
+	public void setNheight(double nheight) {
+		this.nheight = nheight;
+	}
+
+	/**
+	 * @return the distance
+	 */
+	public double getDistance() {
+		return distance;
+	}
+
+	/**
+	 * @param distance the distance to set
+	 */
+	public void setDistance(double distance) {
+		this.distance = distance;
+	}
+
+	/**
+	 * @return the weight
+	 */
+	public int getWeight() {
+		return weight;
+	}
+	/**
+	 * @param weight the weight to set
+	 */
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+	/**
+	 * @return the height
+	 */
+	public int getHeight() {
+		return height;
+	}
+	/**
+	 * @param height the height to set
+	 */
+	public void setHeight(int height) {
+		this.height = height;
+	}
+	/**
+	 * @return the size
+	 */
+	public String getSize() {
+		return size;
+	}
+	/**
+	 * @param size the size to set
+	 */
+	public void setSize(String size) {
+		this.size = size;
+	}
+	
+	@Override
+	public String toString() {
+		return "Image [weight=" + weight + ", height=" + height + ", size=" + size + "]";
+	}
 	
 }
+

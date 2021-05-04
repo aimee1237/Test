@@ -19,7 +19,7 @@ public class ImageFilter extends RecursiveAction {
 		destination = pdestination;
 	
 	}
-	
+		
 	@Override
 	protected void compute() {
 
